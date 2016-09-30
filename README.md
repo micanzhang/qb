@@ -2,8 +2,22 @@
 cli tool for backup files  to qiniu storage system.
 
 
+## dependency:
+
+1. go 1.7 
+
+
+## install 
+
+``` sh 
+go get -u github.com/micanzhang/qb
+```
+
 ## basic usages
 
+```sh 
+qb --help 
+```
 ### put files
 
 ```sh
