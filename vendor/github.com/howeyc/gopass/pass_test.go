@@ -37,7 +37,7 @@ func TestGetPasswd(t *testing.T) {
 		testData{[]byte{'a', 'b', 'c', 8, '\n'}, "***\b \b", "ab", 0, "Backspace byte should remove the last read byte."},
 		testData{[]byte{'a', 'b', 127, 'c', '\n'}, "**\b \b*", "ac", 0, "Delete byte should remove the last read byte."},
 		testData{[]byte{'a', 'b', 127, 'c', 8, 127, '\n'}, "**\b \b*\b \b\b \b", "", 0, "Successive deletes continue to delete."},
-		testData{[]byte{8, 8, 8, '\n'}, "q", "", 0, "Deletes before characters are noops."},
+		testData{[]byte{8, 8, 8, '\n'}, "", "", 0, "Deletes before characters are noops."},
 		testData{[]byte{8, 8, 8, 'a', 'b', 'c', '\n'}, "***", "abc", 0, "Deletes before characters are noops."},
 
 		testData{[]byte{'a', 'b', 0, 'c', '\n'}, "***", "abc", 0,
