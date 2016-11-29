@@ -1,56 +1,52 @@
 # qb [![Build Status](https://travis-ci.org/micanzhang/qb.svg?branch=master)](https://travis-ci.org/micanzhang/qb) [![Go Report Card](https://goreportcard.com/badge/github.com/micanzhang/qb)](https://goreportcard.com/report/github.com/micanzhang/qb)
-cli tool for backup files to qiniu storage system.
+qb是一个备份文件到七牛云存储的命令行工具.
 
-[chinese version](README_CN.md)
-
-## Dependency:
+## 依赖:
 
 1. go 1.7 
 
-## Install 
+## 安装
 
 ``` sh 
 go get -u github.com/micanzhang/qb
 ```
 
-## basic usages
+## 使用
 
 ```sh 
 qb --help 
 ```
-### put files
+### 文件上传
 
 ```sh
 $qb put file1 file2 ...filen -name name1,name2,...namen
 ```
 
-default name is file's own name;
+name默认为文件名，可以通过 `-name` 参数自定义文件名, 多个文件以 `,` 分隔.
 
-use can customrize your file's name by pass `-name` parameters, split by `,` for multiple files.
-
-### get file 
+### 文件下载
 
 ```sh
 qb get name1  -dir ~/Downloads
 ```
 
-`-dir`: specific directory where files downloaded into, and default dir is directory where cmd your are run at.
+`-dir`: 指定文件下载目录，默认为当前文件夹.
 
-### info files
+### 获取文件信息
 
 ```sh
 $qb info name1,name2....namen
 ```
 
-### remove files
+### 文件删除
 
 ```sh
 $qb remove name1,name2....namen
 ```
 
-## TODO 
-1. refact list command like linux command ls does
-2. auto sync specfic directory
+## TODO
+1. 实现类似linux ls命令.
+2. 文件夹文件自动同步.
 
 
 ## License 
